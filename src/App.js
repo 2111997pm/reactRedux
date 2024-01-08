@@ -1,13 +1,12 @@
-import React from 'react'
-import Reducer from './Components/Reducer'
+import React from "react";
+import Reducer from "./Components/Reducer";
 
 const App = () => {
   return (
     <>
-    <Reducer/>
-    
+      <Reducer />
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;

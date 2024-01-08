@@ -3,25 +3,25 @@ import { useReducer } from 'react';
 
 const counterReducer = (state, action) => {
     switch (action.type) {
-      case 'INCREMENT':
-        return { count: state.count + 1 };
-      case 'DECREMENT':
-        return { count: state.count - 1 };
-      default:
-        return state;
+        case 'INCREMENT':
+            return { count: state.count + action.payload };
+        case 'DECREMENT':
+            return { count: state.count - action.payload };
+        default:
+            return state;
     }
-  };
+};
 
 const Reducer = () => {
     const [state, dispatch] = useReducer(counterReducer, { count: 0 });
 
     // Event handlers
     const handleIncrement = () => {
-        dispatch({ type: 'INCREMENT' });
+        dispatch({ type: 'INCREMENT',payload:5 });
     };
 
     const handleDecrement = () => {
-        dispatch({ type: 'DECREMENT' });
+        dispatch({ type: 'DECREMENT',payload:5 });
     };
     return (
         <div>
